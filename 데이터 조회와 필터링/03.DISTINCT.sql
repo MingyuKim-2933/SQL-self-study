@@ -2,8 +2,6 @@
 drop table T1;
 create table T1 (ID SERIAL not null primary key, BCOLOR VARCHAR, FCOLOR VARCHAR);
 
-commit; -- 테이블 생성 -> DDL --> 치는 순간에 바로 적용
-
 insert
 	into T1 (BCOLOR, FCOLOR)
 values
@@ -22,7 +20,7 @@ values
 	('blue', 'blue')
 ;
 
-commit;
+commit; -- 테이블 생성 -> DDL --> 치는 순간에 바로 적용
 
 ---------------------------------- 생성된 테이블 확인
 select

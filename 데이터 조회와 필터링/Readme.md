@@ -37,4 +37,4 @@ cast(a as date) - a를 date 타입으로 변경시킨다. cast()는 형 변환 �
 
 upper() - 대문자로 변경한다.
 
-first_name || last_name as fullname first_name과 last_name을 붙인 후 칼럼명 fullname으로 생성한다.
+first_name || last_name as fullname - first_name과 last_name을 붙인 후 칼럼명 fullname으로 생성한다.

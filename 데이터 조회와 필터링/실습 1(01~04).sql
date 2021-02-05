@@ -178,9 +178,9 @@ from
 where
 	a.first_name = 'Nick'
 	or a.last_name = 'Hunt'
--- 문제20번)	Actor 테이블을 이용하여, Actor 테이블의  first_name 컬럼과 last_name 컬럼을 , firstname, lastname 으로 컬럼명을 바꿔서 보여주세요	?????
+-- 문제20번)	Actor 테이블을 이용하여, Actor 테이블의  first_name 컬럼과 last_name 컬럼을 , firstname, lastname 으로 컬럼명을 바꿔서 보여주세요.
 select
-	a2.firstname = a2.first_name,
-	a2.lastname = a2.last_name
+	a2.first_name as firstname,
+	a2.last_name as lastname
 from
 	actor a2

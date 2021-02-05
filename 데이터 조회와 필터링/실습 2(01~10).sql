@@ -52,6 +52,17 @@ from
 	address
 where
 	postal_code like '77%'
+	
+-- 문제7번) address 테이블을 이용하여, 우편번호(postal_code) 값이  두번째글자가 1인 우편번호의  address_id, address, district ,postal_code  컬럼을 확인해주세요.
+select
+	address_id,
+	address,
+	district ,
+	postal_code
+from
+	address
+where
+	postal_code like '_1%'
 
 -- 문제8번) payment 테이블을 이용하여,  고객번호가 341에 해당 하는 사람이 결제를 2007년 2월 15~16일 사이에 한 모든 결제내역을 확인해주세요.	
 select 

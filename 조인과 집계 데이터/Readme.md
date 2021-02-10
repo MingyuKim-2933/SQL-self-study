@@ -2,17 +2,17 @@
 
 1. 조인이란
 
-2. INNER 조인
+2. INNER 조인 : 특정 칼럼을 기준으로 정확히 매칭된 집합을 출력한다.
 
-3. OUTER 조인
+3. OUTER 조인 : 특정 칼럼을 기준으로 매칭된 집합을 출력하지만 한쪽의 집합은 모두 출력하고 다른 한쪽의 집합은 매칭되는 컬럼의 값 만을 출력한다.
 
-4. SELF 조인
+4. SELF 조인 : 동일한 테이블 끼리의 특정 컬럼을 기준으로 매칭되는 집합을 출력한다.
 
-5. FULL OUTER 조인
+5. FULL OUTER 조인 : INNER, LEFT OUTER, RIGHT OUTER 조인 집합을 모두 출력한다.
 
-6. CROSS 조인
+6. CROSS 조인 : Cartesian Product이라고도 하며 조인되는 두 테이블에서 곱집합을 반환한다.
 
-7. NATURAL 조인
+7. NATURAL 조인 : 특정 테이블의 같은 이름을 가진 칼럼 간의 조인집합을 출력한다.
 
 8. Group BY절
 

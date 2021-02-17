@@ -1,6 +1,6 @@
--- NATURAL JOIN: µÎ °³ÀÇ Å×ÀÌºí¿¡¼­ °°ÀºÀÌ¸§À» °¡Áø Ä®·³ °£ÀÇ INNER Á¶ÀÎ ÁıÇÕ °á°ú¸¦ Ãâ·ÂÇÑ´Ù. SQL¹® ÀÚÃ¼°¡ °£¼ÒÇØ Áö´Â ¹æ¹ıÀÌ´Ù.
--- ½Ç¹«¿¡¼­ ÀÚÁÖ ¾²ÀÌÁö´Â ¾Ê´Â´Ù.
--- ½Ç½À ÁØºñ
+-- NATURAL JOIN: ë‘ ê°œì˜ í…Œì´ë¸”ì—ì„œ ê°™ì€ì´ë¦„ì„ ê°€ì§„ ì¹¼ëŸ¼ ê°„ì˜ INNER ì¡°ì¸ ì§‘í•© ê²°ê³¼ë¥¼ ì¶œë ¥í•œë‹¤. SQLë¬¸ ìì²´ê°€ ê°„ì†Œí•´ ì§€ëŠ” ë°©ë²•ì´ë‹¤.
+-- ì‹¤ë¬´ì—ì„œ ìì£¼ ì“°ì´ì§€ëŠ” ì•ŠëŠ”ë‹¤.
+-- ì‹¤ìŠµ ì¤€ë¹„
 create table categories_a
 (
 	category_id serial primary key,
@@ -13,8 +13,8 @@ create table products_a
 	product_id serial primary key,
 	product_name varchar (255) not null,
 	category_id int not null,
-	foreign key (category_id) -- ÇÑ °³ÀÇ Ä«Å×°í¸®´Â ¿©·¯ °³ÀÇ Á¦Ç°¸¦ ¹Ş´Â´Ù.
-	references categories_a (category_id) -- ÂüÁ¶ÇÑ´Ù. Áï Æ¯Á¤ Á¦Ç°Àº Æ¯Á¤ Ä«Å×°í¸®¸¦ °¡Áö°í ÀÖ¾î¾ß ÇÑ´Ù. -- ¿Ü·¡Å° Á¦¾à Á¶°Ç(ÂüÁ¶ ¹«°á¼º Á¦¾à Á¶°Ç)
+	foreign key (category_id) -- í•œ ê°œì˜ ì¹´í…Œê³ ë¦¬ëŠ” ì—¬ëŸ¬ ê°œì˜ ì œí’ˆë¥¼ ë°›ëŠ”ë‹¤.
+	references categories_a (category_id) -- ì°¸ì¡°í•œë‹¤. ì¦‰ íŠ¹ì • ì œí’ˆì€ íŠ¹ì • ì¹´í…Œê³ ë¦¬ë¥¼ ê°€ì§€ê³  ìˆì–´ì•¼ í•œë‹¤. -- ì™¸ë˜í‚¤ ì œì•½ ì¡°ê±´(ì°¸ì¡° ë¬´ê²°ì„± ì œì•½ ì¡°ê±´)
 );	
 
 -------------------------------------------
@@ -41,7 +41,7 @@ values
 commit;
 
 -------------------------------------------
-select -- ÀÚµ¿À¸·Î µ¿ÀÏÇÏ°Ô °¡Áö°í ÀÖ´Â category_id Ä®·³À» ±âÁØÀ¸·Î INNER JOINÇÑ´Ù.
+select -- ìë™ìœ¼ë¡œ ë™ì¼í•˜ê²Œ ê°€ì§€ê³  ìˆëŠ” category_id ì¹¼ëŸ¼ì„ ê¸°ì¤€ìœ¼ë¡œ INNER JOINí•œë‹¤.
 	*
 from  
 	products_a a
@@ -50,7 +50,7 @@ natural join
 ;
 
 -------------------------------------------
-select -- NATURAL JOINÀÇ °á°ú¿Í °°´Ù. ±×·¯³ª ÀÚµ¿º¸´Ù´Â ¾ÈÁ¤¼º ÀÖ´Â INNER JOINÀ» »ç¿ëÇÏ´Â °ÍÀÌ ÁÁ´Ù.
+select -- NATURAL JOINì˜ ê²°ê³¼ì™€ ê°™ë‹¤. ê·¸ëŸ¬ë‚˜ ìë™ë³´ë‹¤ëŠ” ì•ˆì •ì„± ìˆëŠ” INNER JOINì„ ì‚¬ìš©í•˜ëŠ” ê²ƒì´ ì¢‹ë‹¤.
 	a.category_id,
 	a.product_id,
 	a.product_name,
@@ -62,7 +62,7 @@ inner join
 	a.category_id = b.category_id
 
 -------------------------------------------	
-select -- À§ÀÇ °á°ú¿Í °°´Ù.
+select -- ìœ„ì˜ ê²°ê³¼ì™€ ê°™ë‹¤.
 	a.category_id,
 	a.product_id,
 	a.product_name,
@@ -73,9 +73,9 @@ where
 	a.category_id = b.category_id
 	
 -------------------------------------------
--- Ãß°¡ ½Ç½À
--- city¿Í country¿¡´Â µ¿ÀÏÇÑ ÀÌ¸§À¸·Î Á¸ÀçÇÏ´Â Ä®·³ÀÌ country_id¿Í last_updateÀÌ´Ù.
--- ÀÌ·± °æ¿ì NATURAL JOIN ½Ã¿¡´Â last_update Ä®·³±îÁö INNER JOIN¿¡ ¼º°øÇØ¾ß¸¸ °á°ú °ªÀÌ ³ª¿Â´Ù.
+-- ì¶”ê°€ ì‹¤ìŠµ
+-- cityì™€ countryì—ëŠ” ë™ì¼í•œ ì´ë¦„ìœ¼ë¡œ ì¡´ì¬í•˜ëŠ” ì¹¼ëŸ¼ì´ country_idì™€ last_updateì´ë‹¤.
+-- ì´ëŸ° ê²½ìš° NATURAL JOIN ì‹œì—ëŠ” last_update ì¹¼ëŸ¼ê¹Œì§€ INNER JOINì— ì„±ê³µí•´ì•¼ë§Œ ê²°ê³¼ ê°’ì´ ë‚˜ì˜¨ë‹¤.
 select
 	*  
 from
@@ -84,7 +84,7 @@ natural join
 	country b;
 
 -------------------------------------------
-select -- INNER JOINÀ» »ç¿ëÇÏ¸é ÀÇµµÇÑ ´ë·Î µ¥ÀÌÅÍ°¡ Ãâ·ÂµÈ´Ù.
+select -- INNER JOINì„ ì‚¬ìš©í•˜ë©´ ì˜ë„í•œ ëŒ€ë¡œ ë°ì´í„°ê°€ ì¶œë ¥ëœë‹¤.
 	*
 from
 	city a
@@ -92,7 +92,7 @@ inner join country b on
 	a.country_id = b.country_id 
 
 -------------------------------------------
-select -- À§ÀÇ °á°ú¿Í °°´Ù.
+select -- ìœ„ì˜ ê²°ê³¼ì™€ ê°™ë‹¤.
 	*
 from
 	city a, country b

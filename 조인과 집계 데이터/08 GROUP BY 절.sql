@@ -1,4 +1,4 @@
--- GROUP BY 절은 SELECT문에서 반환된 행을 그룹으로 나눈다. 각 그룹에 대한 합계, 평균, 카운트 등을 계산할 수 있다.
+-- GROUP BY절 : GROUP BY 절은 SELECT문에서 반환된 행을 그룹으로 나눈다. 각 그룹에 대한 합계, 평균, 카운트 등을 계산할 수 있다.
 select
 	p.customer_id
 from 

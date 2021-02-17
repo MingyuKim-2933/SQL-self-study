@@ -38,7 +38,8 @@ select -- group by를 사용하여 staff들의 중복을 제거하고 각 staff들의 계산 횟수를
 	count(p.payment_id) as count
 from 
 	payment p
-group by staff_id;
+group by staff_id
+;
 
 ------------------------------------------
 select 
@@ -56,4 +57,5 @@ group by --위의 select문에서 선언된 칼럼들은 group by에 모두 선언해주어야 한다.
 	s.staff_id,
 	s.first_name,
 	s.last_name 
+;
 

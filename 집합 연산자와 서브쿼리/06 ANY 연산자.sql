@@ -1,10 +1,10 @@
--- ANY ¿¬»êÀÚ´Â °ªÀ» ¼­ºêÄõ¸®¿¡ ÀÇÇØ ¹İÈ¯µÈ °ª ÁıÇÕ°ú ºñ±³ÇÑ´Ù. ANY ¿¬»êÀÚ´Â ¼­ºêÄõ¸®ÀÇ °ªÀÌ ¾î¶°ÇÑ °ªÀÌ¶óµµ ¸¸Á·À» ÇÏ¸é Á¶°ÇÀÌ ¼º¸³µÈ´Ù.
+-- ANY ì—°ì‚°ìëŠ” ê°’ì„ ì„œë¸Œì¿¼ë¦¬ì— ì˜í•´ ë°˜í™˜ëœ ê°’ ì§‘í•©ê³¼ ë¹„êµí•œë‹¤. ANY ì—°ì‚°ìëŠ” ì„œë¸Œì¿¼ë¦¬ì˜ ê°’ì´ ì–´ë– í•œ ê°’ì´ë¼ë„ ë§Œì¡±ì„ í•˜ë©´ ì¡°ê±´ì´ ì„±ë¦½ëœë‹¤.
 select 
 	f.title,
 	f.length 
 from 
 	film f
-where length >= any
+where length >= any -- ì¹´í…Œê³ ë¦¬ ë³„ ì˜í™” ì¤‘ ì–´ë– í•œ ì˜í™”(length 178ì´ ìµœì†Œê°’)ì˜ lengthë³´ë‹¤ í¬ë‹¤ë©´ ì¶œë ¥í•œë‹¤. (178 ì´ìƒì´ë©´ ì¶œë ¥í•œë‹¤.)
 (
 	select
 		max(f2.length)
@@ -18,12 +18,42 @@ where length >= any
 )
 ;
 
+-------------------------------
+select 
+	f.title,
+	f.length 
+from 
+	film f
+where length = any -- ì¹´í…Œê³ ë¦¬ ë³„ ì˜í™” ì¤‘ ì–´ë– í•œ ì˜í™”ì˜ lengthì™€ ê°™ë‹¤ë©´ ì¶œë ¥í•œë‹¤.
+(
 	select
-		f2.title,
-		f2.length
+		max(f2.length)
 	from 
 		film f2,
 		film_category fc
 	where
 		f2.film_id = fc.film_id
-	
+	group by
+		fc.category_id
+)
+;
+
+-------------------------------
+select -- ìœ„ì™€ ê°™ì€ ê²°ê³¼ë¥¼ ì¶œë ¥í•œë‹¤. 
+	f.title,
+	f.length 
+from 
+	film f
+where length in -- '= ANY' ëŠ” 'IN'ê³¼ ë™ì¼ / '= ANY'ë³´ë‹¤ 'IN'ì´ ì§ê´€ì ì´ì—¬ì„œ ìì£¼ ì“°ì¸ë‹¤.
+(
+	select
+		max(f2.length)
+	from 
+		film f2,
+		film_category fc
+	where
+		f2.film_id = fc.film_id
+	group by
+		fc.category_id
+)
+;

@@ -14,7 +14,7 @@ select -- 중복이 제거 되지 않는다.
 	name
 from
 	sales2007_1
-union
+union all
 select
 	name
 from
@@ -25,7 +25,7 @@ select -- 중복이 제거 되지 않는다.
 	amount
 from
 	sales2007_1
-union
+union all
 select
 	amount
 from
@@ -36,7 +36,7 @@ select -- 중복이 제거 되지 않는다.
 	*
 from
 	sales2007_1
-union
+union all
 select
 	*
 from

@@ -1,29 +1,29 @@
--- GROUP BYÀı : GROUP BY ÀıÀº SELECT¹®¿¡¼­ ¹İÈ¯µÈ ÇàÀ» ±×·ìÀ¸·Î ³ª´«´Ù. °¢ ±×·ì¿¡ ´ëÇÑ ÇÕ°è, Æò±Õ, Ä«¿îÆ® µîÀ» °è»êÇÒ ¼ö ÀÖ´Ù.
-select
+-- GROUP BYì ˆ : GROUP BY ì ˆì€ SELECTë¬¸ì—ì„œ ë°˜í™˜ëœ í–‰ì„ ê·¸ë£¹ìœ¼ë¡œ ë‚˜ëˆˆë‹¤. ê° ê·¸ë£¹ì— ëŒ€í•œ í•©ê³„, í‰ê· , ì¹´ìš´íŠ¸ ë“±ì„ ê³„ì‚°í•  ìˆ˜ ìˆë‹¤.
+select -- ì¤‘ë³µ ê°’ì´ ì œê±°ëœ customer_idë¥¼ êµ¬í•  ìˆ˜ ìˆë‹¤.
 	p.customer_id
 from 
 	payment p
-group by -- ÇÑ °³ÀÇ custome r_id°¡ payment Å×ÀÌºí¿¡ ¿©·¯ ¹ø µé¾î°¥ ¼ö ÀÖ´Âµ¥ group by¸¦ »ç¿ëÇÏ¸é Áßº¹µÈ customer_id¸¦ Á¦°ÅÇØÁØ´Ù.
+group by -- í•œ ê°œì˜ custome r_idê°€ payment í…Œì´ë¸”ì— ì—¬ëŸ¬ ë²ˆ ë“¤ì–´ê°ˆ ìˆ˜ ìˆëŠ”ë° group byë¥¼ ì‚¬ìš©í•˜ë©´ ì¤‘ë³µëœ customer_idë¥¼ ì œê±°í•´ì¤€ë‹¤.
 	p.customer_id
 ;
 ------------------------------------------
-select --À§ÀÇ °á°ú¿Í ¶È°°´Ù(distinct°¡ Áßº¹À» Á¦°ÅÇØÁØ´Ù.)
+select --ìœ„ì˜ ê²°ê³¼ì™€ ë˜‘ê°™ë‹¤(distinctê°€ ì¤‘ë³µì„ ì œê±°í•´ì¤€ë‹¤.)
 	distinct p.customer_id
 from
 	payment p
 ;	
 ------------------------------------------
-select -- °Å·¡¾×ÀÌ °¡Àå ¸¹Àº °í°´¼øÀ¸·Î Ãâ·ÂÇÑ´Ù.
+select -- ê±°ë˜ì•¡ì´ ê°€ì¥ ë§ì€ ê³ ê°ìˆœìœ¼ë¡œ ì¶œë ¥í•œë‹¤.
 	p.customer_id,
 	sum(amount) as amount_sum
 	from
 	payment p
 group by p.customer_id
-order by amount_sum desc -- amount_sum ´ë½Å sum(amount)µµ °¡´É
+order by amount_sum desc -- amount_sum ëŒ€ì‹  sum(amount)ë„ ê°€ëŠ¥
 ;
 
 ------------------------------------------
-select -- À§¿Í °°Àº °á°ú°¡ Ãâ·ÂµÇÁö¸¸ order by¿¡ ¼ıÀÚ·Î ³Ñ¹ö¸µ ÇÏ´Â °ÍÀº °ªÀÌ ¹Ù²ğ ¼öµµ ÀÖ¾î¼­ ÃßÃµÇÏÁö ¾Ê´Â´Ù.
+select -- ìœ„ì™€ ê°™ì€ ê²°ê³¼ê°€ ì¶œë ¥ë˜ì§€ë§Œ order byì— ìˆ«ìë¡œ ë„˜ë²„ë§ í•˜ëŠ” ê²ƒì€ ê°’ì´ ë°”ë€” ìˆ˜ë„ ìˆì–´ì„œ ì¶”ì²œí•˜ì§€ ì•ŠëŠ”ë‹¤.
 	p.customer_id,
 	sum(amount) as amount_sum
 	from
@@ -33,7 +33,7 @@ order by 2 desc
 ;
 
 ------------------------------------------
-select -- group by¸¦ »ç¿ëÇÏ¿© staffµéÀÇ Áßº¹À» Á¦°ÅÇÏ°í °¢ staffµéÀÇ °è»ê È½¼ö¸¦ countÇÏ¿© Ãâ·ÂÇÑ´Ù.
+select -- group byë¥¼ ì‚¬ìš©í•˜ì—¬ staffë“¤ì˜ ì¤‘ë³µì„ ì œê±°í•˜ê³  ê° staffë“¤ì˜ ê³„ì‚° íšŸìˆ˜ë¥¼ countí•˜ì—¬ ì¶œë ¥í•œë‹¤.
 	p.staff_id,
 	count(p.payment_id) as count
 from 
@@ -52,7 +52,7 @@ from
 	payment p, staff s
 where
 	p.staff_id = s.staff_id
-group by --À§ÀÇ select¹®¿¡¼­ ¼±¾ğµÈ Ä®·³µéÀº group by¿¡ ¸ğµÎ ¼±¾ğÇØÁÖ¾î¾ß ÇÑ´Ù.
+group by --ìœ„ì˜ selectë¬¸ì—ì„œ ì„ ì–¸ëœ ì¹¼ëŸ¼ë“¤ì€ group byì— ëª¨ë‘ ì„ ì–¸í•´ì£¼ì–´ì•¼ í•œë‹¤.
 	p.staff_id,
 	s.staff_id,
 	s.first_name,

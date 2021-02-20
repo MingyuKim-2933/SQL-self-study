@@ -1,18 +1,18 @@
--- Æ¯Á¤ ÁýÇÕ ³»¿¡¼­ °á°ú °Ç¼öÀÇ º¯È­ ¾øÀÌ ÇØ´ç ÁýÇÕ ¾È¿¡¼­ ÇÕ°è ¹× Ä«¿îÆ® µîÀ» °è»êÇÒ ¼ö ÀÖ´Â ÇÔ¼öÀÌ´Ù.
-select -- Áý°è ÇÔ¼ö´Â Áý°èÀÇ °á°ú¸¸À» Ãâ·ÂÇÏ´Â ÇÑ°è°¡ ÀÖ´Ù.
+-- ë¶„ì„í•¨ìˆ˜ : íŠ¹ì • ì§‘í•© ë‚´ì—ì„œ ê²°ê³¼ ê±´ìˆ˜ì˜ ë³€í™” ì—†ì´ í•´ë‹¹ ì§‘í•© ì•ˆì—ì„œ í•©ê³„ ë° ì¹´ìš´íŠ¸ ë“±ì„ ê³„ì‚°í•  ìˆ˜ ìžˆëŠ” í•¨ìˆ˜ì´ë‹¤.
+select -- ì§‘ê³„ í•¨ìˆ˜ëŠ” ì§‘ê³„ì˜ ê²°ê³¼ë§Œì„ ì¶œë ¥í•˜ëŠ” í•œê³„ê°€ ìžˆë‹¤.
 	count(*)
 from
 	product
 	
 --------------------------------
-select -- Áý°èÀÇ °á°ú¿Í Å×ÀÌºíÀÇ ³»¿ëµµ ÇÔ²² º¸¿©ÁØ´Ù. (count + Å×ÀÌºíÀÇ ³»¿ë)
-	count(*) over() , p.* -- count(*)ÀÇ °á°ú¸¦ ¸ðµç Çà¿¡ ºÙ¿©ÁØ´Ù.
+select -- ì§‘ê³„ì˜ ê²°ê³¼ì™€ í…Œì´ë¸”ì˜ ë‚´ìš©ë„ í•¨ê»˜ ë³´ì—¬ì¤€ë‹¤. (count + í…Œì´ë¸”ì˜ ë‚´ìš©)
+	count(*) over() , p.* -- count(*)ì˜ ê²°ê³¼ë¥¼ ëª¨ë“  í–‰ì— ë¶™ì—¬ì¤€ë‹¤.
 from
 	product p 
 	
 --------------------------------
---select  -- »ç¿ëÇÏ°íÀÚ ÇÏ´Â ºÐ¼®ÇÔ¼ö¸¦ ¾²°í ´ë»ó Ä®·³À» ±âÀç ÈÄ partition by¿¡¼­ °ªÀ» ±¸ÇÏ´Â ±âÁØ Ä®·³À» ¾²°í order by¿¡¼­ Á¤·Ä Ä®·³À» ±âÀçÇÑ´Ù.
+--select  -- ì‚¬ìš©í•˜ê³ ìž í•˜ëŠ” ë¶„ì„í•¨ìˆ˜ë¥¼ ì“°ê³  ëŒ€ìƒ ì¹¼ëŸ¼ì„ ê¸°ìž¬ í›„ partition byì—ì„œ ê°’ì„ êµ¬í•˜ëŠ” ê¸°ì¤€ ì¹¼ëŸ¼ì„ ì“°ê³  order byì—ì„œ ì •ë ¬ ì¹¼ëŸ¼ì„ ê¸°ìž¬í•œë‹¤.
 --	c1,
---	ºÐ¼®ÇÔ¼ö(c2, c3, ...) over (partition by c4 order by c5)
+--	ë¶„ì„í•¨ìˆ˜(c2, c3, ...) over (partition by c4 order by c5)
 --from table_name
 --;

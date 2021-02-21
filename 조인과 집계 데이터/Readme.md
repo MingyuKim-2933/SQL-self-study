@@ -18,7 +18,7 @@
 
 9. Having절 : GROUP BY절과 함께 HAVING절을 사용하여 GROUP BY의 결과를 특정 조건으로 필터링 하는 기능을 한다.
 
-10. Grouping Set절
+10. Grouping Set절 : GROUPING SET절을 사용하여 여러 개의 UNION ALL을 이용한 SQL과 같은 결과를 도출할 수 있다.
 
 11. ROLLUP절 : 지정된 GROUPING 칼럼의 소계를 생성하는데 사용된다. 간단한 문법으로 다양한 소계를 출력할 수 있다.
 

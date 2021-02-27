@@ -1,3 +1,3 @@
 # SQL-self-study
 
-사용 언어 : ```PostgreSQL```
+사용 DBMS :  ```Oracle```, ```PostgreSQL```

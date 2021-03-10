@@ -1,1 +1,1 @@
-# SQLD
+# SQLD study

@@ -5,7 +5,7 @@
      , B.DEPT_NM
   FROM TB_EMP A, TB_DEPT B 
   WHERE A.DEPT_CD = B.DEPT_CD 
-    AND A.ADDR LIKE '%¼ö¿ø%'
+    AND A.ADDR LIKE '%ìˆ˜ì›%'
 ORDER BY A.EMP_NO
 ; 
 
@@ -16,20 +16,20 @@ SELECT A.EMP_NO -- NATURAL JOIN
      , DEPT_CD
      , B.DEPT_NM
 FROM TB_EMP A NATURAL JOIN TB_DEPT B 
-  WHERE A.ADDR LIKE '%¼ö¿ø%'
+  WHERE A.ADDR LIKE '%ìˆ˜ì›%'
 ;
 
- SELECT A.EMP_NO -- NATURAL JOIN¿¡ ALIAS¸¦ »ç¿ëÇÏ¿© ¿À·ù ¹ß»ý
+ SELECT A.EMP_NO -- NATURAL JOINì— ALIASë¥¼ ì‚¬ìš©í•˜ì—¬ ì˜¤ë¥˜ ë°œìƒ
       , A.EMP_NM
       , A.ADDR     
       , B.DEPT_NM
       , B.DEPT_CD
   FROM TB_EMP A NATURAL JOIN TB_DEPT B 
- WHERE A.ADDR LIKE '%¼ö¿ø%'
+ WHERE A.ADDR LIKE '%ìˆ˜ì›%'
 ;
 
 -------------------------------------------
-SELECT -- USING Àý
+SELECT -- USING ì ˆ
 	A.EMP_NO ,
 	A.EMP_NM ,
 	A.ADDR ,
@@ -40,9 +40,9 @@ FROM
 JOIN TB_DEPT B
 		USING (DEPT_CD)
 WHERE
-	A.ADDR LIKE '%¼ö¿ø%' ;
+	A.ADDR LIKE '%ìˆ˜ì›%' ;
 
-SELECT -- USING Àý ¾È¿¡ ALIAS¸¦ »ç¿ëÇÏ¿© ¿À·ù ¹ß»ý
+SELECT -- USING ì ˆ ì•ˆì— ALIASë¥¼ ì‚¬ìš©í•˜ì—¬ ì˜¤ë¥˜ ë°œìƒ
 	A.EMP_NO ,
 	A.EMP_NM ,
 	A.ADDR ,
@@ -53,11 +53,11 @@ FROM
 JOIN TB_DEPT B
 		USING (B.DEPT_CD)
 WHERE
-	A.ADDR LIKE '%¼ö¿ø%'
+	A.ADDR LIKE '%ìˆ˜ì›%'
 ;
 
 -------------------------------------------
-SELECT -- ON Àý
+SELECT -- ON ì ˆ
 	A.EMP_NO ,
 	A.EMP_NM ,
 	A.ADDR ,
@@ -68,10 +68,10 @@ FROM
 JOIN TB_DEPT B ON
 	(A.DEPT_CD = B.DEPT_CD)
 WHERE
-	A.ADDR LIKE '%¼ö¿ø%'
+	A.ADDR LIKE '%ìˆ˜ì›%'
 ;
 
-SELECT -- ¾Ù¸®¾î½º¸¦ ÀûÁö ¾Ê¾Æ ¿À·ù ¹ß»ý
+SELECT -- ì•¨ë¦¬ì–´ìŠ¤ë¥¼ ì ì§€ ì•Šì•„ ì˜¤ë¥˜ ë°œìƒ
 	A.EMP_NO ,
 	A.EMP_NM ,
 	A.ADDR ,
@@ -82,10 +82,10 @@ FROM
 JOIN TB_DEPT B ON
 	(A.DEPT_CD = B.DEPT_CD)
 WHERE
-	A.ADDR LIKE '%¼ö¿ø%' ;
+	A.ADDR LIKE '%ìˆ˜ì›%' ;
 
 -------------------------------------------
-SELECT -- 3°³ Å×ÀÌºí WHERE Àý·Î Á¶ÀÎ
+SELECT -- 3ê°œ í…Œì´ë¸” WHERE ì ˆë¡œ ì¡°ì¸
 	A.EMP_NO ,
 	A.EMP_NM ,
 	A.ADDR ,
@@ -98,12 +98,12 @@ FROM
 	TB_EMP_CERTI C
 WHERE
 	A.DEPT_CD = B.DEPT_CD
-	AND A.ADDR LIKE '%¼ö¿ø%'
+	AND A.ADDR LIKE '%ìˆ˜ì›%'
 	AND A.EMP_NO = C.EMP_NO
 ORDER BY
 	A.EMP_NO;
 
-SELECT -- 3°³ Å×ÀÌºí JOIN, ON »ç¿ëÇÏ¿© Á¶ÀÎ
+SELECT -- 3ê°œ í…Œì´ë¸” JOIN, ON ì‚¬ìš©í•˜ì—¬ ì¡°ì¸
 	A.EMP_NO ,
 	A.EMP_NM ,
 	A.ADDR ,
@@ -117,32 +117,32 @@ JOIN TB_DEPT B ON
 JOIN TB_EMP_CERTI C ON
 	(A.EMP_NO = C.EMP_NO)
 WHERE
-	A.ADDR LIKE '%¼ö¿ø%';
+	A.ADDR LIKE '%ìˆ˜ì›%';
 
 -------------------------------------------
--- OUTER Á¶ÀÎ ½Ç½À È¯°æ ±¸Ãà
-INSERT INTO TB_DEPT VALUES ('100014', '4Â÷»ê¾÷Çõ¸íÆÀ', '999999'); -- ºÎ¼­ Å×ÀÌºí¿¡ ºÎ¼­ µ¥ÀÌÅÍ¸¦ Ãß°¡ÇÔ, »õ·Î Ãß°¡ÇÑ ÆÀ¿¡´Â ¾î¶°ÇÑ »ç¿øµµ ¼ÓÇÏÁö ¾ÊÀº »óÅÂÀÓ
-INSERT INTO TB_DEPT VALUES ('100015', 'Æ÷½ºÆ®ÄÚ·Î³ªÆÀ', '999999');
+-- OUTER ì¡°ì¸ ì‹¤ìŠµ í™˜ê²½ êµ¬ì¶•
+INSERT INTO TB_DEPT VALUES ('100014', '4ì°¨ì‚°ì—…í˜ëª…íŒ€', '999999'); -- ë¶€ì„œ í…Œì´ë¸”ì— ë¶€ì„œ ë°ì´í„°ë¥¼ ì¶”ê°€í•¨, ìƒˆë¡œ ì¶”ê°€í•œ íŒ€ì—ëŠ” ì–´ë– í•œ ì‚¬ì›ë„ ì†í•˜ì§€ ì•Šì€ ìƒíƒœìž„
+INSERT INTO TB_DEPT VALUES ('100015', 'í¬ìŠ¤íŠ¸ì½”ë¡œë‚˜íŒ€', '999999');
 
 COMMIT; 
 
-ALTER TABLE SQLD.TB_EMP DROP CONSTRAINT FK_TB_EMP01; -- Æ¯Á¤ »ç¿øÀº ¹Ýµå½Ã ºÎ¼­°¡ ÇÊ¿äÇÏÁö¸¸ ½Ç½ÀÀ» À§ÇØ ÀÓ½Ã·Î Á¦°ÅÇÑ´Ù.(ÂüÁ¶ ¹«°á¼º Á¦¾à Á¶°Ç (FK) Àá½Ã DROP
+ALTER TABLE SQLD.TB_EMP DROP CONSTRAINT FK_TB_EMP01; -- íŠ¹ì • ì‚¬ì›ì€ ë°˜ë“œì‹œ ë¶€ì„œê°€ í•„ìš”í•˜ì§€ë§Œ ì‹¤ìŠµì„ ìœ„í•´ ìž„ì‹œë¡œ ì œê±°í•œë‹¤.(ì°¸ì¡° ë¬´ê²°ì„± ì œì•½ ì¡°ê±´ (FK) ìž ì‹œ DROP
 
--- ½Ç½ÀÀ» À§ÇØ »ç¿ø Å×ÀÌºí¿¡ ½Å±Ô »ç¿ø 5¸íÀ» Ãß°¡ÇÏ´Âµ¥ Ãß°¡µÇ´Â 5¸íÀÇ ºÎ¼­ ÄÚµå´Â Á¸ÀçÇÏÁö ¾Ê´Â ºÎ¼­ÀÎ "000000"·Î INSERT ÇÑ´Ù.
+-- ì‹¤ìŠµì„ ìœ„í•´ ì‚¬ì› í…Œì´ë¸”ì— ì‹ ê·œ ì‚¬ì› 5ëª…ì„ ì¶”ê°€í•˜ëŠ”ë° ì¶”ê°€ë˜ëŠ” 5ëª…ì˜ ë¶€ì„œ ì½”ë“œëŠ” ì¡´ìž¬í•˜ì§€ ì•ŠëŠ” ë¶€ì„œì¸ "000000"ë¡œ INSERT í•œë‹¤.
 INSERT INTO SQLD.TB_EMP T (T.EMP_NO, T.EMP_NM, T.BIRTH_DE, T.SEX_CD, T.ADDR, T.TEL_NO, T.DIRECT_MANAGER_EMP_NO, T.FINAL_EDU_SE_CD, T.SAL_TRANS_BANK_CD, T.SAL_TRANS_ACCNT_NO, T.DEPT_CD, T.LUNAR_YN ) 
-     VALUES ('1000000041', 'ÀÌ¼ø½Å', '19811201', '1', '°æ±âµµ ¿ëÀÎ½Ã ¼öÁö±¸ Á×Àü1µ¿ 435', '010-5456-7878', NULL, '006', '003', '114-554-223433', '000000', 'N');                         
+     VALUES ('1000000041', 'ì´ìˆœì‹ ', '19811201', '1', 'ê²½ê¸°ë„ ìš©ì¸ì‹œ ìˆ˜ì§€êµ¬ ì£½ì „1ë™ 435', '010-5456-7878', NULL, '006', '003', '114-554-223433', '000000', 'N');                         
 INSERT INTO SQLD.TB_EMP T (T.EMP_NO, T.EMP_NM, T.BIRTH_DE, T.SEX_CD, T.ADDR, T.TEL_NO, T.DIRECT_MANAGER_EMP_NO, T.FINAL_EDU_SE_CD, T.SAL_TRANS_BANK_CD, T.SAL_TRANS_ACCNT_NO, T.DEPT_CD, T.LUNAR_YN ) 
-     VALUES ('1000000042', 'Á¤¾à¿ë', '19820402', '1', '°æ±âµµ °í¾ç½Ã ´ö¾ç±¸ È­Á¤µ¿ 231', '010-4054-6547', NULL, '004', '001', '110-223-553453', '000000', 'Y');                    
+     VALUES ('1000000042', 'ì •ì•½ìš©', '19820402', '1', 'ê²½ê¸°ë„ ê³ ì–‘ì‹œ ë•ì–‘êµ¬ í™”ì •ë™ 231', '010-4054-6547', NULL, '004', '001', '110-223-553453', '000000', 'Y');                    
 INSERT INTO SQLD.TB_EMP T (T.EMP_NO, T.EMP_NM, T.BIRTH_DE, T.SEX_CD, T.ADDR, T.TEL_NO, T.DIRECT_MANAGER_EMP_NO, T.FINAL_EDU_SE_CD, T.SAL_TRANS_BANK_CD, T.SAL_TRANS_ACCNT_NO, T.DEPT_CD, T.LUNAR_YN ) 
-     VALUES ('1000000043', '¹ÚÁö¿ø', '19850611', '1', '°æ±âµµ ¼ö¿ø½Ã ÆÈ´Þ±¸ ¸ÅÅºµ¿ 553', '010-1254-1116', NULL, '004', '001', '100-233-664234', '000000', 'N');                    
+     VALUES ('1000000043', 'ë°•ì§€ì›', '19850611', '1', 'ê²½ê¸°ë„ ìˆ˜ì›ì‹œ íŒ”ë‹¬êµ¬ ë§¤íƒ„ë™ 553', '010-1254-1116', NULL, '004', '001', '100-233-664234', '000000', 'N');                    
 INSERT INTO SQLD.TB_EMP T (T.EMP_NO, T.EMP_NM, T.BIRTH_DE, T.SEX_CD, T.ADDR, T.TEL_NO, T.DIRECT_MANAGER_EMP_NO, T.FINAL_EDU_SE_CD, T.SAL_TRANS_BANK_CD, T.SAL_TRANS_ACCNT_NO, T.DEPT_CD, T.LUNAR_YN ) 
-     VALUES ('1000000044', 'Àåº¸°í', '19870102', '1', '°æ±âµµ ¼º³²½Ã ºÐ´ç±¸ Á¤ÀÚµ¿ 776', '010-1215-8784', NULL, '004', '002', '180-345-556634', '000000', 'Y');                         
+     VALUES ('1000000044', 'ìž¥ë³´ê³ ', '19870102', '1', 'ê²½ê¸°ë„ ì„±ë‚¨ì‹œ ë¶„ë‹¹êµ¬ ì •ìžë™ 776', '010-1215-8784', NULL, '004', '002', '180-345-556634', '000000', 'Y');                         
 INSERT INTO SQLD.TB_EMP T (T.EMP_NO, T.EMP_NM, T.BIRTH_DE, T.SEX_CD, T.ADDR, T.TEL_NO, T.DIRECT_MANAGER_EMP_NO, T.FINAL_EDU_SE_CD, T.SAL_TRANS_BANK_CD, T.SAL_TRANS_ACCNT_NO, T.DEPT_CD, T.LUNAR_YN ) 
-     VALUES ('1000000045', '±èÁ¾¼­', '19880824', '1', '°æ±âµµ °í¾ç½Ã ÀÏ»ê¼­±¸ ¹é¼®µ¿ 474', '010-3687-1245', NULL, '004', '002', '325-344-45345', '000000', 'Y');                    
+     VALUES ('1000000045', 'ê¹€ì¢…ì„œ', '19880824', '1', 'ê²½ê¸°ë„ ê³ ì–‘ì‹œ ì¼ì‚°ì„œêµ¬ ë°±ì„ë™ 474', '010-3687-1245', NULL, '004', '002', '325-344-45345', '000000', 'Y');                    
 COMMIT; 
 
 -------------------------------------------
-SELECT -- LEFT OUTER Á¶ÀÎ
+SELECT -- LEFT OUTER ì¡°ì¸
 	A.EMP_NO ,
 	A.EMP_NM ,
 	B.DEPT_CD ,
@@ -152,11 +152,10 @@ FROM
 	TB_DEPT B
 WHERE
 	A.DEPT_CD IN ( '000000', '100001')
-	AND A.DEPT_CD = B.DEPT_CD(+)
-	-- ¿ÞÂÊÀº ´Ù º¸¿©ÁÖ°í ¿À¸¥ÂÊÀº ¸ÅÄªµÇ´Â °Í¸¸ º¸¿©ÁØ´Ù.
+	AND A.DEPT_CD = B.DEPT_CD(+) -- ì™¼ìª½ì€ ë‹¤ ë³´ì—¬ì£¼ê³  ì˜¤ë¥¸ìª½ì€ ë§¤ì¹­ë˜ëŠ” ê²ƒë§Œ ë³´ì—¬ì¤€ë‹¤.
 ;
 
-SELECT -- LEFT OUTER Á¶ÀÎ
+SELECT -- LEFT OUTER ì¡°ì¸
 	A.EMP_NO ,
 	A.EMP_NM ,
 	B.DEPT_CD ,
@@ -169,7 +168,7 @@ WHERE
 	A.DEPT_CD IN ( '000000', '100001') ;
 
 -------------------------------------------
-SELECT -- RIGHT OUTER Á¶ÀÎ
+SELECT -- RIGHT OUTER ì¡°ì¸
 	A.EMP_NO ,
 	A.EMP_NM ,
 	B.DEPT_CD ,
@@ -181,7 +180,7 @@ WHERE
 	B.DEPT_CD IN ('100014', '100015', '100001')
 	AND A.DEPT_CD(+) = B.DEPT_CD ;
 
-SELECT -- FULL OUTER Á¶ÀÎ (LEFT OUTER Á¶ÀÎ°ú RIGHT OUTER Á¶ÀÎÀÇ ÇÕÁýÇÕÀÌ Ãâ·ÂµÈ´Ù.)
+SELECT -- FULL OUTER ì¡°ì¸ (LEFT OUTER ì¡°ì¸ê³¼ RIGHT OUTER ì¡°ì¸ì˜ í•©ì§‘í•©ì´ ì¶œë ¥ëœë‹¤.)
 	A.EMP_NO ,
 	A.EMP_NM ,
 	B.DEPT_CD ,
@@ -199,7 +198,7 @@ ORDER BY
 	A.EMP_NO DESC ;
 
 -------------------------------------------
--- ½Ç½À Á¾·á ÈÄ µ¥ÀÌÅÍ »èÁ¦ ¹× Á¦¾à Á¶°Ç Àç¼³Á¤
+-- ì‹¤ìŠµ ì¢…ë£Œ í›„ ë°ì´í„° ì‚­ì œ ë° ì œì•½ ì¡°ê±´ ìž¬ì„¤ì •
 DELETE 
   FROM TB_DEPT 
  WHERE DEPT_CD IN ('100014', '100015');

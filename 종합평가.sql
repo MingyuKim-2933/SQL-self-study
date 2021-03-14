@@ -263,7 +263,7 @@ from
 		count(o.ordernumber) >= 5 ) as db
 group by
 	db.customerid
-
+having count(db.order_month) >= 3
 
 
 문제14번) Tire 카테고리 주문 량이 매달 증가하고 있나요?  (2017년 1월 ~ 12월 까지 판매량만 확인하시면 됩니다.)
@@ -333,7 +333,6 @@ from
 order by
 	mm
 		
-
 
 문제15번) 주문일자별,  직원이 처리한  주문 수를 알려주세요. 총 전체 주문 수도 함께 보여주세요.  
 

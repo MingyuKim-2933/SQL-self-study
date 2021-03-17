@@ -1,7 +1,6 @@
--- ¸ÕÀú ½ÇÇàÇÏ¼¼¿ä!
 set search_path to salesordersexample;
 
-¹®Á¦1¹ø)  ¼Ò¸Å°¡(retailprice)°¡ $125ÀÌ»óÀÎ »óÇ°À» ¾ËÆÄºª¼øÀ¸·Î º¸¿©ÁÖ½Ê½Ã¿À.
+ë¬¸ì œ1ë²ˆ)  ì†Œë§¤ê°€(retailprice)ê°€ $125ì´ìƒì¸ ìƒí’ˆì„ ì•ŒíŒŒë²³ìˆœìœ¼ë¡œ ë³´ì—¬ì£¼ì‹­ì‹œì˜¤.
 
 select
 	*
@@ -13,9 +12,9 @@ order by
 	productname 
 
 
-¹®Á¦2¹ø)  Ä¶¸®Æ÷´Ï¾Æ ÁÖ¿¡ °ÅÁÖ ÇÏ¸ç, ¿ìÆí¹øÈ£(custzipcode) °¡ 92199 ÀÎ °í°´ÀÌ ¸î ¸íÀÎ°¡¿ä? Ãß°¡ÀûÀ¸·Î, ÀüÃ¼ °í°´Àº ¸î¸íÀÎÁö column ÀÌ¸§À» all_cnt_customer ÀÌ¶ó´Â ÄÃ·³À¸·Î ÇÔ²² ¾Ë·ÁÁÖ¼¼¿ä.
+ë¬¸ì œ2ë²ˆ)  ìº˜ë¦¬í¬ë‹ˆì•„ ì£¼ì— ê±°ì£¼ í•˜ë©°, ìš°íŽ¸ë²ˆí˜¸(custzipcode) ê°€ 92199 ì¸ ê³ ê°ì´ ëª‡ ëª…ì¸ê°€ìš”? ì¶”ê°€ì ìœ¼ë¡œ, ì „ì²´ ê³ ê°ì€ ëª‡ëª…ì¸ì§€ column ì´ë¦„ì„ all_cnt_customer ì´ë¼ëŠ” ì»¬ëŸ¼ìœ¼ë¡œ í•¨ê»˜ ì•Œë ¤ì£¼ì„¸ìš”.
 
-Hint 1. Ä¶¸®Æ÷´Ï¾Æ ÁÖ (custstate = 'CA')
+Hint 1. ìº˜ë¦¬í¬ë‹ˆì•„ ì£¼ (custstate = 'CA')
 
 select
 	(select 
@@ -30,7 +29,7 @@ from
 	customers c 
 	
 
-¹®Á¦3¹ø)  ÁÖ¹® ¹øÈ£ (ordernumber) 8¹ø¿¡ ´ëÇÑ ÃÑ ÁÖ¹® ±Ý¾×Àº ¾ó¸¶ÀÎ°¡¿ä? 
+ë¬¸ì œ3ë²ˆ)  ì£¼ë¬¸ ë²ˆí˜¸ (ordernumber) 8ë²ˆì— ëŒ€í•œ ì´ ì£¼ë¬¸ ê¸ˆì•¡ì€ ì–¼ë§ˆì¸ê°€ìš”? 
 
 select
 	sum(od.quantityordered*od.quotedprice)
@@ -39,8 +38,8 @@ from
 where
 	ordernumber = 8
  
-¹®Á¦4¹ø) ÁÖ¹®ÀÏÀÌ 2017-09-02ÀÏ¿¡ ÇØ´çÇÏ¸é¼­,   »óÇ° ¹øÈ£°¡ 1 ÀÌ°Å³ª ¶Ç´Â »óÇ°ÀÇ °³´ç °¡°ÝÀÌ $1000~$2000 ´Þ·¯ »çÀÌÀÎ »óÇ°¿¡ ´ëÇÑ ±¸¸Å Á¤º¸¸¦ ¾Ë·ÁÁÖ¼¼¿ä.
- ÇÊ¿ä ÄÃ·³ : ÁÖ¹®ÀÏÀÚ, °í°´ID, ÁÖ¹®¹øÈ£, »óÇ°¹øÈ£,  »óÇ°°³´ç °¡°Ý,  »óÇ° ÁÖ¹® °¹¼ö, »óÇ° ÃÑ ±¸¸Å±Ý¾× À» ÇÔ²² ¾Ë·ÁÁÖ¼¼¿ä.
+ë¬¸ì œ4ë²ˆ) ì£¼ë¬¸ì¼ì´ 2017-09-02ì¼ì— í•´ë‹¹í•˜ë©´ì„œ,   ìƒí’ˆ ë²ˆí˜¸ê°€ 1 ì´ê±°ë‚˜ ë˜ëŠ” ìƒí’ˆì˜ ê°œë‹¹ ê°€ê²©ì´ $1000~$2000 ë‹¬ëŸ¬ ì‚¬ì´ì¸ ìƒí’ˆì— ëŒ€í•œ êµ¬ë§¤ ì •ë³´ë¥¼ ì•Œë ¤ì£¼ì„¸ìš”.
+ í•„ìš” ì»¬ëŸ¼ : ì£¼ë¬¸ì¼ìž, ê³ ê°ID, ì£¼ë¬¸ë²ˆí˜¸, ìƒí’ˆë²ˆí˜¸,  ìƒí’ˆê°œë‹¹ ê°€ê²©,  ìƒí’ˆ ì£¼ë¬¸ ê°¯ìˆ˜, ìƒí’ˆ ì´ êµ¬ë§¤ê¸ˆì•¡ ì„ í•¨ê»˜ ì•Œë ¤ì£¼ì„¸ìš”.
 
 select
 	o.orderdate ,
@@ -61,7 +60,7 @@ where
 	and (od.productnumber = 1 
 	or od.quotedprice between 1000 and 2000)
 	
-¹®Á¦5¹ø)  µµ½Ã (vendcity)  Ballard, Bellevue ¹× Redmond¿¡ º»»ç¸¦ µÐ ¸ðµç °ø±Þ ¾÷Ã¼(vendor) ÀÇ ÀÌ¸§Àº ¹«¾ùÀÎ°¡¿ä? 
+ë¬¸ì œ5ë²ˆ)  ë„ì‹œ (vendcity)  Ballard, Bellevue ë° Redmondì— ë³¸ì‚¬ë¥¼ ë‘” ëª¨ë“  ê³µê¸‰ ì—…ì²´(vendor) ì˜ ì´ë¦„ì€ ë¬´ì—‡ì¸ê°€ìš”? 
 
 select
 	v.vendname
@@ -72,7 +71,7 @@ where
 	or v.vendcity = 'Bellevue'
 	or v.vendcity = 'Redmond'
 	
-¹®Á¦6¹ø)  °¢ Á¦Ç°(product)ÀÇ Á¦Ç°¸í°ú ÃÑ ÆÇ¸Å·®( quantityordered )À» ¾Ë·ÁÁÖ¼¼¿ä. Ãß°¡·Î, ÀüÃ¼ ÆÇ¸Å·® ¶ÇÇÑ ¾Ë·ÁÁÖ¼¼¿ä. 
+ë¬¸ì œ6ë²ˆ)  ê° ì œí’ˆ(product)ì˜ ì œí’ˆëª…ê³¼ ì´ íŒë§¤ëŸ‰( quantityordered )ì„ ì•Œë ¤ì£¼ì„¸ìš”. ì¶”ê°€ë¡œ, ì „ì²´ íŒë§¤ëŸ‰ ë˜í•œ ì•Œë ¤ì£¼ì„¸ìš”. 
 
 select p.productname, sum(od.quantityordered) as quantityordered , max(db.all_ordered) as total_sales
 from (
@@ -83,7 +82,7 @@ inner join order_details od
 on p.productnumber = od.productnumber 
 group by p.productname 
 
-¹®Á¦7¹ø)  ÁÖ¹® ±Ý¾×ÀÌ $1000 ÀÌ»óÀÌ¸ç,  ÃÑ ÁÖ¹® È½¼ö°¡ 3È¸ ÀÌ»óÀÎ °í°´ ¹øÈ£¿Í ÀÌ¸§Àº? 
+ë¬¸ì œ7ë²ˆ)  ì£¼ë¬¸ ê¸ˆì•¡ì´ $1000 ì´ìƒì´ë©°,  ì´ ì£¼ë¬¸ íšŸìˆ˜ê°€ 3íšŒ ì´ìƒì¸ ê³ ê° ë²ˆí˜¸ì™€ ì´ë¦„ì€? 
 
 select
 	c.customerid,
@@ -101,9 +100,9 @@ having
 	count(od.ordernumber) >=3
 	and sum(od.quantityordered * od.quotedprice) >= 1000
  
-¹®Á¦8¹ø) ¹Ì±¹ ¼­ÇØ¾È¿¡ ÀÖ´Â ÁÖ (custstate ) ¿¡¼­ ÀüÃ¼ ÁÖ¹® ±Ý¾×ÀÌ $1,000,000 °¡ ³Ñ´Â ÁÖ¸¦ º¸¿©ÁÖ¼¼¿ä.
+ë¬¸ì œ8ë²ˆ) ë¯¸êµ­ ì„œí•´ì•ˆì— ìžˆëŠ” ì£¼ (custstate ) ì—ì„œ ì „ì²´ ì£¼ë¬¸ ê¸ˆì•¡ì´ $1,000,000 ê°€ ë„˜ëŠ” ì£¼ë¥¼ ë³´ì—¬ì£¼ì„¸ìš”.
 
-Hint  1. ¼­ÇØ¾È ÁÖ  : custstate  =  'WA', 'OR', 'CA'
+Hint  1. ì„œí•´ì•ˆ ì£¼  : custstate  =  'WA', 'OR', 'CA'
 
 
 select db.custstate, db.total_order_price
@@ -126,8 +125,8 @@ from (
 where db.total_order_price >= 1000000
 
 
-¹®Á¦9¹ø)  Çï¸äÀ» ÁÖ¹®ÇÑ Àû ¾ø´Â °í°´À» º¸¿©ÁÖ¼¼¿ä. not exists¸¦ ²À È°¿ëÇÏ¿© Ç®ÀÌÇØÁÖ¼¼¿ä.
-Hint 1. ProductnameÀ» È°¿ëÇÏ¿© Çï¸Ë È®ÀÎ (Ä«Å×°í¸®Å×ÀÌºí È°¿ë X)
+ë¬¸ì œ9ë²ˆ)  í—¬ë©§ì„ ì£¼ë¬¸í•œ ì  ì—†ëŠ” ê³ ê°ì„ ë³´ì—¬ì£¼ì„¸ìš”. not existsë¥¼ ê¼­ í™œìš©í•˜ì—¬ í’€ì´í•´ì£¼ì„¸ìš”.
+Hint 1. Productnameì„ í™œìš©í•˜ì—¬ í—¬ë§· í™•ì¸ (ì¹´í…Œê³ ë¦¬í…Œì´ë¸” í™œìš© X)
 
 
 
@@ -151,7 +150,7 @@ where
 			)) 
 
 
-¹®Á¦10¹ø) °í°´ÀÇ ¿ùº° ÁÖ¹® È½¼ö°¡ 3 ¹ø ÀÌ»óÀ» ±â·ÏÇÑ Àû ÀÖ´Â ¸ðµç °í°´ ÀÌ¸§Àº ¹«¾ùÀÎ°¡¿ä? (GROUP BY, HAVING, JOIN »ç¿ë)
+ë¬¸ì œ10ë²ˆ) ê³ ê°ì˜ ì›”ë³„ ì£¼ë¬¸ íšŸìˆ˜ê°€ 3 ë²ˆ ì´ìƒì„ ê¸°ë¡í•œ ì  ìžˆëŠ” ëª¨ë“  ê³ ê° ì´ë¦„ì€ ë¬´ì—‡ì¸ê°€ìš”? (GROUP BY, HAVING, JOIN ì‚¬ìš©)
 
 
 select distinct full_name
@@ -172,7 +171,7 @@ having
 ) as db
 
 
-¹®Á¦11¹ø)Á÷¿ø°ú °í°´ÁßÀÌ  ÀÌ¸§ÀÌ µ¿ÀÏÇÑ »ç¶÷ÀÌ ÀÖÀ»±î¿ä?  ÀÖ´Ù¸é ÇØ´ç »ç¶÷ÀÇ ÀÌ¸§¿¡ ´ëÇØ¼­ (ÀÌ¸§+ ¼º) Çü½ÄÀ¸·Î ¾Ë·ÁÁÖ¼¼¿ä.
+ë¬¸ì œ11ë²ˆ)ì§ì›ê³¼ ê³ ê°ì¤‘ì´  ì´ë¦„ì´ ë™ì¼í•œ ì‚¬ëžŒì´ ìžˆì„ê¹Œìš”?  ìžˆë‹¤ë©´ í•´ë‹¹ ì‚¬ëžŒì˜ ì´ë¦„ì— ëŒ€í•´ì„œ (ì´ë¦„+ ì„±) í˜•ì‹ìœ¼ë¡œ ì•Œë ¤ì£¼ì„¸ìš”.
 
 select
 	distinct concat(c.custfirstname, ' ', c.custlastname ) as custfullname,
@@ -187,8 +186,8 @@ where
 	c.custfirstname = e.empfirstname
 
 
-¹®Á¦12¹ø)  2017³â 09 ¿ù¿¡ ÇØ´ç ÇÏ´Â ÁÖ¹®¿¡ ´ëÇØ¼­, 1~10ÀÏ, 11~20ÀÏ, 21~30ÀÏ¿¡ ´ëÇÑ °¢°¢ÀÇ ±¸°£¿¡ ´ëÇÑ ÁÖ¹® ±Ý¾×À» º¸¿©ÁÖ¼¼¿ä. 
-row ¼ö´Â 1°³·Î  1~10ÀÏ¿¡ ÇØ´çÇÏ´Â ÁÖ¹®±Ý¾×,  11~20ÀÏ¿¡ ÇØ´çÇÏ´Â ÁÖ¹®±Ý¾×, 21~30ÀÏ¿¡ ÇØ´çÇÏ´Â ÁÖ¹®±Ý¾×°ú , ÃÑ ÁÖ¹®±Ý¾×¿¡ ´ëÇÑ ÄÃ·³À¸·Î º¸¿©ÁÖ¼¼¿ä.
+ë¬¸ì œ12ë²ˆ)  2017ë…„ 09 ì›”ì— í•´ë‹¹ í•˜ëŠ” ì£¼ë¬¸ì— ëŒ€í•´ì„œ, 1~10ì¼, 11~20ì¼, 21~30ì¼ì— ëŒ€í•œ ê°ê°ì˜ êµ¬ê°„ì— ëŒ€í•œ ì£¼ë¬¸ ê¸ˆì•¡ì„ ë³´ì—¬ì£¼ì„¸ìš”. 
+row ìˆ˜ëŠ” 1ê°œë¡œ  1~10ì¼ì— í•´ë‹¹í•˜ëŠ” ì£¼ë¬¸ê¸ˆì•¡,  11~20ì¼ì— í•´ë‹¹í•˜ëŠ” ì£¼ë¬¸ê¸ˆì•¡, 21~30ì¼ì— í•´ë‹¹í•˜ëŠ” ì£¼ë¬¸ê¸ˆì•¡ê³¼ , ì´ ì£¼ë¬¸ê¸ˆì•¡ì— ëŒ€í•œ ì»¬ëŸ¼ìœ¼ë¡œ ë³´ì—¬ì£¼ì„¸ìš”.
 
 select
 	db1.firstorder_sum,
@@ -234,13 +233,13 @@ from
 		o.orderdate between '2017-09-01' and '2017-09-30' ) as db4
 
 
-¹®Á¦13¹ø) ÁÖ¹®À» ¸¹ÀÌ ÇÑ °í°´ ¼ø¼­ ´ë·Î ¼øÀ§¸¦ ¸Å°Ü ³ª¿­ÇÏ¼¼¿ä.  (analytic function È°¿ë)
-- °°Àº ÁÖ¹® ¼öÄ¡ ÀÏ ¶§, °°Àº µî¼ö·Î º¸¿©ÁÖ¼¼¿ä.
-- ¼øÀ§´Â 1,2,3µîÀÇ Çü½ÄÀ¸·Î ¼øÂ÷ÀûÀÎ °ªÀÌ ³ëÃâµÇ¾î¾ß ÇÕ´Ï´Ù.
+ë¬¸ì œ13ë²ˆ) ì£¼ë¬¸ì„ ë§Žì´ í•œ ê³ ê° ìˆœì„œ ëŒ€ë¡œ ìˆœìœ„ë¥¼ ë§¤ê²¨ ë‚˜ì—´í•˜ì„¸ìš”.  (analytic function í™œìš©)
+- ê°™ì€ ì£¼ë¬¸ ìˆ˜ì¹˜ ì¼ ë•Œ, ê°™ì€ ë“±ìˆ˜ë¡œ ë³´ì—¬ì£¼ì„¸ìš”.
+- ìˆœìœ„ëŠ” 1,2,3ë“±ì˜ í˜•ì‹ìœ¼ë¡œ ìˆœì°¨ì ì¸ ê°’ì´ ë…¸ì¶œë˜ì–´ì•¼ í•©ë‹ˆë‹¤.
 
-- ´Ü °í°´ÀÇ ¸®½ºÆ®´Â ´ÙÀ½¿¡ Á¦ÇÑ Á¶°ÇÀ» °¡Áý´Ï´Ù.
-- ¿ùº° ÁÖ¹® 5È¸ ÀÌ»óÇÑ Case¸¦  3°³¿ù ÀÌ»óÇÑ °æÇèÇÑ °í°´À¸·Î¸¸ Á¦ÇÑÇÕ´Ï´Ù. (3°³¿ùÀº ¿¬¼ÓÀÌ´ø ºÒ¿¬¼ÓÀÌ´ø »ó°ü¾ø½À´Ï´Ù.)
-ex)  °í°´1ÀÌ 1¿ù¿¡ 6È¸ , 3¿ù¿¡ 5È¸,  9¿ù¿¡ 5È¸ ÁÖ¹®ÇÑ °æÇèÀÌÀÖ´Ù¸é Æ÷ÇÔÇØ¾ßÇÕ´Ï´Ù. 
+- ë‹¨ ê³ ê°ì˜ ë¦¬ìŠ¤íŠ¸ëŠ” ë‹¤ìŒì— ì œí•œ ì¡°ê±´ì„ ê°€ì§‘ë‹ˆë‹¤.
+- ì›”ë³„ ì£¼ë¬¸ 5íšŒ ì´ìƒí•œ Caseë¥¼  3ê°œì›” ì´ìƒí•œ ê²½í—˜í•œ ê³ ê°ìœ¼ë¡œë§Œ ì œí•œí•©ë‹ˆë‹¤. (3ê°œì›”ì€ ì—°ì†ì´ë˜ ë¶ˆì—°ì†ì´ë˜ ìƒê´€ì—†ìŠµë‹ˆë‹¤.)
+ex)  ê³ ê°1ì´ 1ì›”ì— 6íšŒ , 3ì›”ì— 5íšŒ,  9ì›”ì— 5íšŒ ì£¼ë¬¸í•œ ê²½í—˜ì´ìžˆë‹¤ë©´ í¬í•¨í•´ì•¼í•©ë‹ˆë‹¤. 
 
 
 select
@@ -266,15 +265,15 @@ group by
 having count(db.order_month) >= 3
 
 
-¹®Á¦14¹ø) Tire Ä«Å×°í¸® ÁÖ¹® ·®ÀÌ ¸Å´Þ Áõ°¡ÇÏ°í ÀÖ³ª¿ä?  (2017³â 1¿ù ~ 12¿ù ±îÁö ÆÇ¸Å·®¸¸ È®ÀÎÇÏ½Ã¸é µË´Ï´Ù.)
-    ¿ùº° ÁÖ¹®·®À» ÀÌÀü ´Þ ÁÖ¹®·®°ú ÇÔ²² Ç¥±âÇØ Áõ°¡ ¿©ºÎ¸¦ ¾Ë·ÁÁÖ¼¼¿ä.  (analytic function È°¿ë)
-    -- ¾Æ·¡ÀÇ Ç¥±â °ªÀ¸·Î »êÃâ ÇØÁÖ¼¼¿ä. 
-    - ÀÌÀü ´Þ º¸´Ù °ªÀÌ Å©´Ù¸é ? 'PLUS'
-    - ÀÌÀü ´ÞÀÇ °ªÀÌ ÇöÀç °ª º¸´Ù Å©´Ù¸é ? 'MINUS'
-    - ÇöÀç ´ÞÀÇ ÆÇ¸Å ·®°ú ÀÌÀü ´Þ °ªÀÌ °°´Ù¸é ? 'SAME'
-    - ÀÌ ¿ÜÀÇ Case ´Â ? NULL 
+ë¬¸ì œ14ë²ˆ) Tire ì¹´í…Œê³ ë¦¬ ì£¼ë¬¸ ëŸ‰ì´ ë§¤ë‹¬ ì¦ê°€í•˜ê³  ìžˆë‚˜ìš”?  (2017ë…„ 1ì›” ~ 12ì›” ê¹Œì§€ íŒë§¤ëŸ‰ë§Œ í™•ì¸í•˜ì‹œë©´ ë©ë‹ˆë‹¤.)
+    ì›”ë³„ ì£¼ë¬¸ëŸ‰ì„ ì´ì „ ë‹¬ ì£¼ë¬¸ëŸ‰ê³¼ í•¨ê»˜ í‘œê¸°í•´ ì¦ê°€ ì—¬ë¶€ë¥¼ ì•Œë ¤ì£¼ì„¸ìš”.  (analytic function í™œìš©)
+    -- ì•„ëž˜ì˜ í‘œê¸° ê°’ìœ¼ë¡œ ì‚°ì¶œ í•´ì£¼ì„¸ìš”. 
+    - ì´ì „ ë‹¬ ë³´ë‹¤ ê°’ì´ í¬ë‹¤ë©´ ? 'PLUS'
+    - ì´ì „ ë‹¬ì˜ ê°’ì´ í˜„ìž¬ ê°’ ë³´ë‹¤ í¬ë‹¤ë©´ ? 'MINUS'
+    - í˜„ìž¬ ë‹¬ì˜ íŒë§¤ ëŸ‰ê³¼ ì´ì „ ë‹¬ ê°’ì´ ê°™ë‹¤ë©´ ? 'SAME'
+    - ì´ ì™¸ì˜ Case ëŠ” ? NULL 
     
- Hint 1. Ä«Å×°í¸® Å×ÀÌºí È°¿ë ÇÊ¿ä  - "Tires" Ä«Å×°í¸® È®ÀÎ 
+ Hint 1. ì¹´í…Œê³ ë¦¬ í…Œì´ë¸” í™œìš© í•„ìš”  - "Tires" ì¹´í…Œê³ ë¦¬ í™•ì¸ 
  
 select
 	yyyy,
@@ -334,7 +333,7 @@ order by
 	mm
 		
 
-¹®Á¦15¹ø) ÁÖ¹®ÀÏÀÚº°,  Á÷¿øÀÌ Ã³¸®ÇÑ  ÁÖ¹® ¼ö¸¦ ¾Ë·ÁÁÖ¼¼¿ä. ÃÑ ÀüÃ¼ ÁÖ¹® ¼öµµ ÇÔ²² º¸¿©ÁÖ¼¼¿ä.  
+ë¬¸ì œ15ë²ˆ) ì£¼ë¬¸ì¼ìžë³„,  ì§ì›ì´ ì²˜ë¦¬í•œ  ì£¼ë¬¸ ìˆ˜ë¥¼ ì•Œë ¤ì£¼ì„¸ìš”. ì´ ì „ì²´ ì£¼ë¬¸ ìˆ˜ë„ í•¨ê»˜ ë³´ì—¬ì£¼ì„¸ìš”.  
 
 select 
 	o.orderdate,

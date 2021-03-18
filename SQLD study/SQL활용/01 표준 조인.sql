@@ -103,7 +103,7 @@ WHERE
 ORDER BY
 	A.EMP_NO;
 
-SELECT -- 3개 테이블 JOIN, ON 사용하여 조인
+SELECT -- 3개 테이블 JOIN 사용해 조인
 	A.EMP_NO ,
 	A.EMP_NM ,
 	A.ADDR ,

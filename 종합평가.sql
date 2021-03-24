@@ -1,4 +1,4 @@
-set search_path to salesordersexample;
+set search_path to salesordersexample; -- path를 salesordersexample로 지정한다.
 
 문제1번)  소매가(retailprice)가 $125이상인 상품을 알파벳순으로 보여주십시오.
 

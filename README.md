@@ -1,3 +1,3 @@
-# SQL-self-study
+# SQL self study
 
 
